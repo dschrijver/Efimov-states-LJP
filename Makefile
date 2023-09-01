@@ -8,5 +8,11 @@ run: clean main.out
 main.out: ${C_SOURCES}
 	@gcc $^ -o main.out -lm 
 
+opt: clean clang
+	@./main.out
+
+clang: ${C_SOURCES}
+	@clang $^ -o main.out -lm 
+
 clean:
 	@rm -f main.out
