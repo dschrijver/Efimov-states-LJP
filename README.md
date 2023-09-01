@@ -10,5 +10,12 @@ foo@bar:~$ sudo apt install build-essential
 - Download the repository and move into the root directory containing the [Makefile](Makefile).
 - To run the program, simply run the command ```make``` in your terminal.
 
+- EDIT: switching from gcc to clang can make performance improvements. Install clang using:
+```console
+foo@bar:~$ sudo apt install clang
+```
+- To compile the program using clang, run the command ```make opt``` in your terminal.
+
+
 ## Changing settings
 All important settings can be changed in [constants.h](constants.h) in the root directory. 
