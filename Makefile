@@ -12,7 +12,7 @@ opt: clean clang
 	@./main.out
 
 clang: ${C_SOURCES}
-	@clang $^ -o main.out -lm 
+	@clang $^ -o main.out -O3 -lm 
 
 clean:
 	@rm -f main.out
