@@ -1,18 +1,14 @@
-C_SOURCES = $(wildcard main.c lib/*.c)
-# -lm flag links the math library
-# -f flag deletes if present
+COMPILER = gcc
+OPT_FLAGS = -std=c17 -O3
+DEBUG_FLAGS = -Wall -Wextra -Wno-unused-result
+LIBRARIES = -lm
+C_SOURCES = $(wildcard main.c src/*.c)
 
-run: clean main.out
-	@./main.out
+all: clean main.out
+	./main.out
 
 main.out: ${C_SOURCES}
-	@gcc $^ -o main.out -lm 
-
-opt: clean clang
-	@./main.out
-
-clang: ${C_SOURCES}
-	@clang $^ -o main.out -O3 -lm 
+	$(COMPILER) $^ -o $@ $(OPT_FLAGS) $(DEBUG_FLAGS) $(LIBRARIES) 
 
 clean:
-	@rm -f main.out
+	rm -f main.out

@@ -1,3 +1,4 @@
+#define _POSIX_SOURCE
 #include <stdio.h> // printf(), fflush(), stdout
 #include <unistd.h> // fork(), pipe(), close()
 #include <signal.h> // kill(), SIGKILL
@@ -5,13 +6,13 @@
 #include <time.h> // time(), clock(), clock_t, CLOCKS_PER_SEC, sleep(), time_t, struct tm, localtime
 #include <math.h> // sqrt()
 
-#include "lib/child_processes.h" // child_process()
-#include "lib/update_network.h" // update_prep_network()
-#include "lib/matrix_mat.h" // matuniform(), vecuniform(), printmat(), printrowvec()
+#include "src/child_processes.h" // child_process()
+#include "src/update_network.h" // update_prep_network()
+#include "src/matrix_mat.h" // matuniform(), vecuniform(), printmat(), printrowvec()
 #include "main.h"
 
 
-int main(int argc, char *argv[]) {
+int main(void) {
     srand(time(NULL));
 
     // Use the following if the calculation starts with a random initialization

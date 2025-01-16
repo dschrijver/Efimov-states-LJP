@@ -64,6 +64,6 @@ double C[2][3], D[2][3];
 double dpsidr_list[2][3];
 double d2psidr2_list[2][3];
 
-int main(int argc, char *argv[]);
+int main(void);
 
 #endif
